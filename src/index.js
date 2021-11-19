@@ -8,14 +8,17 @@ import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from "@chakra-ui/react"
 import theme from './Theme'
 import { BrowserRouter } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
 
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ChakraProvider theme={theme}>
-        <App />
-      </ChakraProvider>
+      <AuthProvider>
+        <ChakraProvider theme={theme}>
+          <App />
+        </ChakraProvider>
+      </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

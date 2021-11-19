@@ -1,9 +1,16 @@
+import BlogHero from "../components/Blog/BlogHero"
+import BlogPost from "../components/Blog/BlogPost"
+
 const Blog = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+        <BlogHero />
+        <BlogPost />
+        </>
     )
 }
 
 export default Blog
+
+
+

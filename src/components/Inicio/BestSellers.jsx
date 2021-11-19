@@ -1,255 +1,339 @@
-import React from "react";
-import { chakra, Box, Flex, useColorModeValue, Heading } from "@chakra-ui/react";
+import {
+    Flex,
+    Circle,
+    Box,
+    Image,
+    Badge,
+    useColorModeValue,
+    Icon,
+    chakra,
+    SimpleGrid,
+    Tooltip,
+    Heading
+} from '@chakra-ui/react';
+
+import { FiShoppingCart } from 'react-icons/fi';
+
+const data = {
+    isNew: false,
+    imageURL:
+        'https://images.unsplash.com/photo-1497339100210-9e87df79c218?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80',
+    name: 'Coat',
+    price: 39
+};
+
+const data2 = {
+    isNew: true,
+    imageURL:
+        'https://images.unsplash.com/photo-1544441893-675973e31985?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80',
+    name: 'Conjunto',
+    price: 69
+};
+
+const data3 = {
+    isNew: false,
+    imageURL:
+        'https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=871&q=80',
+    name: 'Camibusos',
+    price: 29
+};
+
+const data4 = {
+    isNew: true,
+    imageURL:
+        'https://images.unsplash.com/photo-1565084888279-aca607ecce0c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80',
+    name: 'Pantalones',
+    price: 49
+};
 
 const BestSellers = () => {
     return (
         <>
-            <Heading as="h4" marginTop="3">
+            <Heading as="h5" marginTop="3">
                 Más vendidos
             </Heading>
-            <Flex
-                bg={useColorModeValue("#F9FAFB", "gray.600")}
-                p={50}
-                w="full"
-                alignItems="center"
-                justifyContent="center"
-                direction={{
-                    base: 'column',
-                    lg: 'row',
-                }}
-                spacing={{
-                    base: '10',
-                    lg: '28',
-                }}
-            >
-                <Flex
-                    direction="column"
-                    justifyContent="center"
-                    alignItems="center"
-                    w="sm"
-                    mx="auto"
-                >
-                    <Box
-                        bg="gray.300"
-                        h={64}
-                        w="full"
-                        rounded="lg"
-                        shadow="md"
-                        bgSize="cover"
-                        bgPos="center"
-                        style={{
-                            backgroundImage:
-                                "url(https://images.pexels.com/photos/4557647/pexels-photo-4557647.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)",
-                        }}
-                    ></Box>
+            <SimpleGrid minChildWidth="300px" spacing="20px" ml="2" px="3" py="4" mr="2">
+                <Box
+                    transform="scale(1.0)"
+                    transition="0.2s ease-in-out"
+                    _hover={{
+                        transform: 'scale(1.05)'
+                    }}
+                    bg={useColorModeValue('white', 'gray.800')}
+                    maxW="600px"
+                    w="100%"
+                    borderWidth="1px"
+                    rounded="lg"
+                    shadow="lg"
+                    position="relative">
+                    {data.isNew && (
+                        <Circle
+                            size="10px"
+                            position="absolute"
+                            top={2}
+                            right={2}
+                            bg="green.200"
+                        />
+                    )}
 
-                    <Box
-                        w={{ base: 56, md: 64 }}
-                        bg={useColorModeValue("white", "gray.800")}
-                        mt={-10}
-                        shadow="lg"
-                        rounded="lg"
-                        overflow="hidden"
-                    >
-                        <chakra.h3
-                            py={2}
-                            textAlign="center"
-                            fontWeight="bold"
-                            textTransform="uppercase"
-                            color={useColorModeValue("gray.800", "white")}
-                            letterSpacing={1}
-                        >
-                            Jean y correa
-                        </chakra.h3>
+                    <Image
+                        src={data.imageURL}
+                        alt={`Picture of ${data.name}`}
+                        roundedTop="lg"
+                    />
 
-                        <Flex
-                            alignItems="center"
-                            justifyContent="space-between"
-                            py={2}
-                            px={3}
-                            bg={useColorModeValue("gray.200", "gray.700")}
-                        >
-                            <chakra.span
-                                fontWeight="bold"
-                                color={useColorModeValue("gray.800", "gray.200")}
-                            >
-                                $129
-                            </chakra.span>
-                            <chakra.button
-                                bg="gray.800"
-                                fontSize="xs"
-                                fontWeight="bold"
-                                color="white"
-                                px={2}
-                                py={1}
-                                rounded="lg"
-                                textTransform="uppercase"
-                                _hover={{
-                                    bg: useColorModeValue("gray.700", "gray.600"),
-                                }}
-                                _focus={{
-                                    bg: useColorModeValue("gray.700", "gray.600"),
-                                    outline: "none",
-                                }}
-                            >
-                                Add to cart
-                            </chakra.button>
+                    <Box p="6">
+                        <Box d="flex" alignItems="baseline">
+                            {data.isNew && (
+                                <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="green">
+                                    New
+                                </Badge>
+                            )}
+                        </Box>
+                        <Flex mt="1" justifyContent="space-between" alignContent="center">
+                            <Box
+                                fontSize="2xl"
+                                fontWeight="semibold"
+                                as="h4"
+                                lineHeight="tight"
+                                isTruncated>
+                                {data.name}
+                            </Box>
+                            <Tooltip
+                                label="Add to cart"
+                                bg="white"
+                                placement={'top'}
+                                color={'gray.800'}
+                                fontSize={'1.2em'}>
+                                <chakra.a href={'#'} display={'flex'}>
+                                    <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} />
+                                </chakra.a>
+                            </Tooltip>
+                        </Flex>
+
+                        <Flex justifyContent="space-between" alignContent="center">
+                            <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
+                                <Box as="span" color={'gray.600'} fontSize="lg">
+                                    $
+                                </Box>
+                                {data.price}
+                            </Box>
                         </Flex>
                     </Box>
-                </Flex>
-                <Flex
-                    direction="column"
-                    justifyContent="center"
-                    alignItems="center"
-                    w="sm"
-                    mx="auto"
-                >
-                    <Box
-                        bg="gray.300"
-                        h={64}
-                        w="full"
-                        rounded="lg"
-                        shadow="md"
-                        bgSize="cover"
-                        bgPos="center"
-                        style={{
-                            backgroundImage:
-                                "url(https://images.pexels.com/photos/1078973/pexels-photo-1078973.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)",
-                        }}
-                    ></Box>
+                </Box>
 
-                    <Box
-                        w={{ base: 56, md: 64 }}
-                        bg={useColorModeValue("white", "gray.800")}
-                        mt={-10}
-                        shadow="lg"
-                        rounded="lg"
-                        overflow="hidden"
-                    >
-                        <chakra.h3
-                            py={2}
-                            textAlign="center"
-                            fontWeight="bold"
-                            textTransform="uppercase"
-                            color={useColorModeValue("gray.800", "white")}
-                            letterSpacing={1}
-                        >
-                            Sombreros
-                        </chakra.h3>
+                <Box
+                    transform="scale(1.0)"
+                    transition="0.2s ease-in-out"
+                    _hover={{
+                        transform: 'scale(1.05)'
+                    }}
+                    bg={useColorModeValue('white', 'gray.800')}
+                    maxW="600px"
+                    w="100%"
+                    borderWidth="1px"
+                    rounded="lg"
+                    shadow="lg"
+                    position="relative">
+                    {data2.isNew && (
+                        <Circle
+                            size="10px"
+                            position="absolute"
+                            top={2}
+                            right={2}
+                            bg="green.500"
+                        />
+                    )}
 
-                        <Flex
-                            alignItems="center"
-                            justifyContent="space-between"
-                            py={2}
-                            px={3}
-                            bg={useColorModeValue("gray.200", "gray.700")}
-                        >
-                            <chakra.span
-                                fontWeight="bold"
-                                color={useColorModeValue("gray.800", "gray.200")}
-                            >
-                                $19
-                            </chakra.span>
-                            <chakra.button
-                                bg="gray.800"
-                                fontSize="xs"
-                                fontWeight="bold"
-                                color="white"
-                                px={2}
-                                py={1}
-                                rounded="lg"
-                                textTransform="uppercase"
-                                _hover={{
-                                    bg: useColorModeValue("gray.700", "gray.600"),
-                                }}
-                                _focus={{
-                                    bg: useColorModeValue("gray.700", "gray.600"),
-                                    outline: "none",
-                                }}
-                            >
-                                Add to cart
-                            </chakra.button>
+                    <Image
+                        src={data2.imageURL}
+                        alt={`Picture of ${data2.name}`}
+                        roundedTop="lg"
+                    />
+
+                    <Box p="6">
+                        <Box d="flex" alignItems="baseline">
+                            {data2.isNew && (
+                                <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="green">
+                                    New
+                                </Badge>
+                            )}
+                        </Box>
+                        <Flex mt="1" justifyContent="space-between" alignContent="center">
+                            <Box
+                                fontSize="2xl"
+                                fontWeight="semibold"
+                                as="h4"
+                                lineHeight="tight"
+                                isTruncated>
+                                {data2.name}
+                            </Box>
+                            <Tooltip
+                                label="Add to cart"
+                                bg="white"
+                                placement={'top'}
+                                color={'gray.800'}
+                                fontSize={'1.2em'}>
+                                <chakra.a href={'#'} display={'flex'}>
+                                    <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} />
+                                </chakra.a>
+                            </Tooltip>
+                        </Flex>
+
+                        <Flex justifyContent="space-between" alignContent="center">
+                            <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
+                                <Box as="span" color={'gray.600'} fontSize="lg">
+                                    $
+                                </Box>
+                                {data2.price}
+                            </Box>
                         </Flex>
                     </Box>
-                </Flex>
-                <Flex
-                    direction="column"
-                    justifyContent="center"
-                    alignItems="center"
-                    w="sm"
-                    mx="auto"
-                >
-                    <Box
-                        bg="gray.300"
-                        h={64}
-                        w="full"
-                        rounded="lg"
-                        shadow="md"
-                        bgSize="cover"
-                        bgPos="center"
-                        style={{
-                            backgroundImage:
-                                "url(https://images.pexels.com/photos/7679454/pexels-photo-7679454.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)",
-                        }}
-                    ></Box>
+                </Box>
 
-                    <Box
-                        w={{ base: 56, md: 64 }}
-                        bg={useColorModeValue("white", "gray.800")}
-                        mt={-10}
-                        shadow="lg"
-                        rounded="lg"
-                        overflow="hidden"
-                    >
-                        <chakra.h3
-                            py={2}
-                            textAlign="center"
-                            fontWeight="bold"
-                            textTransform="uppercase"
-                            color={useColorModeValue("gray.800", "white")}
-                            letterSpacing={1}
-                        >
-                            Pantalones
-                        </chakra.h3>
+                <Box
+                    transform="scale(1.0)"
+                    transition="0.2s ease-in-out"
+                    _hover={{
+                        transform: 'scale(1.05)'
+                    }}
+                    bg={useColorModeValue('white', 'gray.800')}
+                    maxW="600px"
+                    w="100%"
+                    borderWidth="1px"
+                    rounded="lg"
+                    shadow="lg"
+                    position="relative">
+                    {data3.isNew && (
+                        <Circle
+                            size="10px"
+                            position="absolute"
+                            top={2}
+                            right={2}
+                            bg="green.500"
+                        />
+                    )}
 
-                        <Flex
-                            alignItems="center"
-                            justifyContent="space-between"
-                            py={2}
-                            px={3}
-                            bg={useColorModeValue("gray.200", "gray.700")}
-                        >
-                            <chakra.span
-                                fontWeight="bold"
-                                color={useColorModeValue("gray.800", "gray.200")}
-                            >
-                                $49
-                            </chakra.span>
-                            <chakra.button
-                                bg="gray.800"
-                                fontSize="xs"
-                                fontWeight="bold"
-                                color="white"
-                                px={2}
-                                py={1}
-                                rounded="lg"
-                                textTransform="uppercase"
-                                _hover={{
-                                    bg: useColorModeValue("gray.700", "gray.600"),
-                                }}
-                                _focus={{
-                                    bg: useColorModeValue("gray.700", "gray.600"),
-                                    outline: "none",
-                                }}
-                            >
-                                Add to cart
-                            </chakra.button>
+                    <Image
+                        src={data3.imageURL}
+                        alt={`Picture of ${data3.name}`}
+                        roundedTop="lg"
+                    />
+
+                    <Box p="6">
+                        <Box d="flex" alignItems="baseline">
+                            {data3.isNew && (
+                                <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="green">
+                                    New
+                                </Badge>
+                            )}
+                        </Box>
+                        <Flex mt="1" justifyContent="space-between" alignContent="center">
+                            <Box
+                                fontSize="2xl"
+                                fontWeight="semibold"
+                                as="h4"
+                                lineHeight="tight"
+                                isTruncated>
+                                {data3.name}
+                            </Box>
+                            <Tooltip
+                                label="Add to cart"
+                                bg="white"
+                                placement={'top'}
+                                color={'gray.800'}
+                                fontSize={'1.2em'}>
+                                <chakra.a href={'#'} display={'flex'}>
+                                    <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} />
+                                </chakra.a>
+                            </Tooltip>
+                        </Flex>
+
+                        <Flex justifyContent="space-between" alignContent="center">
+                            <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
+                                <Box as="span" color={'gray.600'} fontSize="lg">
+                                    $
+                                </Box>
+                                {data3.price}
+                            </Box>
                         </Flex>
                     </Box>
-                </Flex>
-            </Flex>
+                </Box>
+
+                <Box
+                    transform="scale(1.0)"
+                    transition="0.2s ease-in-out"
+                    _hover={{
+                        transform: 'scale(1.05)'
+                    }}
+                    bg={useColorModeValue('white', 'gray.800')}
+                    maxW="600px"
+                    w="100%"
+                    borderWidth="1px"
+                    rounded="lg"
+                    shadow="lg"
+                    position="relative">
+                    {data4.isNew && (
+                        <Circle
+                            size="10px"
+                            position="absolute"
+                            top={2}
+                            right={2}
+                            bg="green.500"
+                        />
+                    )}
+
+                    <Image
+                        src={data4.imageURL}
+                        alt={`Picture of ${data4.name}`}
+                        roundedTop="lg"
+                    />
+
+                    <Box p="6">
+                        <Box d="flex" alignItems="baseline">
+                            {data4.isNew && (
+                                <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="green">
+                                    New
+                                </Badge>
+                            )}
+                        </Box>
+                        <Flex mt="1" justifyContent="space-between" alignContent="center">
+                            <Box
+                                fontSize="2xl"
+                                fontWeight="semibold"
+                                as="h4"
+                                lineHeight="tight"
+                                isTruncated>
+                                {data4.name}
+                            </Box>
+                            <Tooltip
+                                label="Add to cart"
+                                bg="white"
+                                placement={'top'}
+                                color={'gray.800'}
+                                fontSize={'1.2em'}>
+                                <chakra.a href={'#'} display={'flex'}>
+                                    <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} />
+                                </chakra.a>
+                            </Tooltip>
+                        </Flex>
+
+                        <Flex justifyContent="space-between" alignContent="center">
+                            <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
+                                <Box as="span" color={'gray.600'} fontSize="lg">
+                                    $
+                                </Box>
+                                {data4.price}
+                            </Box>
+                        </Flex>
+                    </Box>
+                </Box>
+
+            </SimpleGrid>
         </>
     );
 };
 
 export default BestSellers;
+
+

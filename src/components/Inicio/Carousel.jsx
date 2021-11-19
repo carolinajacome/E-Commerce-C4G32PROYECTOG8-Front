@@ -51,13 +51,13 @@ const Carousel = () => {
         },
         {
             img:
-                "https://images.pexels.com/photos/1142950/pexels-photo-1142950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
             label: "Fourth Slide",
             description: "Nulla vitae elit libero, a pharetra augue mollis interdum.",
         },
         {
             img:
-                "https://images.pexels.com/photos/3124111/pexels-photo-3124111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                "https://images.unsplash.com/photo-1619166719123-471cee9ce91e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
             label: "Fifth Slide",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         },

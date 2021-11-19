@@ -12,31 +12,14 @@ import {
     VStack,
     Button,
     useColorMode,
-    Image,Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton
+    Image
 } from "@chakra-ui/react";
 
-import { SearchIcon } from "@chakra-ui/icons";
 import { useViewportScroll } from "framer-motion";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaMoon, FaSun } from "react-icons/fa";
 import J4Jeans from '../assets/img/J4JEANS_Logo.jpg';
 
-const Searching = () => {
-    const { isOpen, onOpen, onClose } = useDisclosure()
-    return (
-        <>
-            <Button onClick={onOpen}>Open Modal</Button>
-
-            <Modal isOpen={isOpen} onClose={onClose}>
-                <ModalOverlay />
-                <ModalContent>
-                    <ModalHeader>Ingresa tu búsqueda</ModalHeader>
-                    <ModalCloseButton />
-                </ModalContent>
-            </Modal>
-        </>
-    )
-}
 
 const NavBar = () => {
     const { toggleColorMode: toggleMode } = useColorMode();
@@ -210,10 +193,11 @@ const NavBar = () => {
                         </Flex>
                         <Flex justify="flex-end" align="center" color="gray.400">
                             <HStack spacing="5" display={{ base: "none", md: "flex" }}>
+                                
                                 {/* <Button>
                                 <IconButton onClick={Searching} aria-label="Search database" icon={<SearchIcon />} />
                                 </Button> */}
-                                {Searching}
+                                
                             
                                 <Button colorScheme="pink" variant="solid" size="sm" bgGradient="linear(to-r, pink.400, pink.500, pink.600)"
                                     color="white">
