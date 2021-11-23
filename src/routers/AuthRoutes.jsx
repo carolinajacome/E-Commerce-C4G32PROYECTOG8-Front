@@ -4,7 +4,7 @@ import Inicio from "../pages/Inicio"
 const AuthRoutes = () => {
     return (
         <>
-        <Routes>
+            <Routes>
                 <Route path="/" element={<Inicio />}>
                 </Route>
             </Routes>

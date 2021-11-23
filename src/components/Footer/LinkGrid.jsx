@@ -4,7 +4,7 @@ import { FooterHeading } from './FooterHeading'
 
 export const LinkGrid = (props) => (
     <SimpleGrid columns={2} {...props}>
-        <Box minW="130px">
+        <Box minW="200px" w="100%" >
             <FooterHeading mb="4">J4JEANS</FooterHeading>
             <Stack>
                 <Link>Quiénes somos</Link>
@@ -18,13 +18,13 @@ export const LinkGrid = (props) => (
                 <Link>Mapa del sitio</Link>
             </Stack>
         </Box>
-        <Box minW="130px">
+        <Box minW="200px" w="100%">
             <FooterHeading mb="4">ATENCIÓN AL CLIENTE</FooterHeading>
             <Stack>
                 <Link>Llamanos: (+57) 3112666269</Link>
                 <Link>WhatsApp: (+57) 3223658208</Link>
                 <Link>Messenger: @JFOURJEANS</Link>
-                <Link>instagram: @JFOURJEANS</Link>
+                <Link>Instagram: @JFOURJEANS</Link>
             </Stack>
         </Box>
     </SimpleGrid>

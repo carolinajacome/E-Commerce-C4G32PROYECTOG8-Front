@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
 import { FooterHeading } from './FooterHeading'
 
 export const SocialMediaLinks = (props) => (
-    <Stack spacing="5" alignItems="center">
+    <Stack spacing="5" alignItems="center" w="auto">
         <FooterHeading>Síguenos en nuestras redes sociales</FooterHeading>
         <Stack>
             <ButtonGroup alignItems="center" justifyContent="center" variant="ghost" color="gray.600" {...props}>

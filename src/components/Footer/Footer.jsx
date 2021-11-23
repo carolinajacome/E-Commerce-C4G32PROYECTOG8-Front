@@ -9,7 +9,7 @@ export const Footer = () => (
         as="footer"
         role="contentinfo"
         mx="auto"
-        maxW="full"
+        maxW="100%"
         py="12"
         px={{
             base: '4',
@@ -52,7 +52,7 @@ export const Footer = () => (
                     <SocialMediaLinks
                         width={{
                             base: 'full',
-                            md: 'sm',
+                            lg: 'full',
                         }}
                     />
                 </Stack>
@@ -69,6 +69,7 @@ export const Footer = () => (
                 <Copyright />
                 
             </Stack>
+            
         </Stack>
     </Box>
 );

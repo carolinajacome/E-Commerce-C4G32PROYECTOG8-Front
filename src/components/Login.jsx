@@ -10,6 +10,7 @@ import {
     Stack,
     Image,
 } from '@chakra-ui/react';
+
 import J4Jeans from '../assets/img/J4JEANS_Logo.jpg';
 import J4JeansLogin from '../assets/img/PortadaJ4Jeans.png';
 import { EmailIcon } from '@chakra-ui/icons';
@@ -26,8 +27,8 @@ const Login = () => {
                     src={
                         J4JeansLogin
                     }
-                   /*  https://images.pexels.com/photos/458766/pexels-photo-458766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=auto&w=940 */
-/>
+                /*  https://images.pexels.com/photos/458766/pexels-photo-458766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=auto&w=940 */
+                />
             </Flex>
             <Flex p={8} flex={1} align={'center'} justify={'center'}>
                 <Stack spacing={4} w={'full'} maxW={'md'}>

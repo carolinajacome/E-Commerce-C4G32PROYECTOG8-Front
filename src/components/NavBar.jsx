@@ -131,6 +131,7 @@ const NavBar = () => {
                                     fontSize="md"
                                     _hover={{ color: cl }}
                                     _focus={{ boxShadow: "none" }}
+                                    
                                 >
                                     INICIO
                                 </Button>
