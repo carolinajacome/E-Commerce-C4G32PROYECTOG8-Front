@@ -1,5 +1,6 @@
 import { Filters } from "../components/Dama/Filters"
 import { ProductCard } from "../components/Dama/ProductCard"
+import {Grid, GridItem} from "@chakra-ui/react"
 
 const Dama = () => {
     return (

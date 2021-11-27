@@ -1,4 +1,7 @@
 import React from "react";
+
+import { Link as ReactLink } from "react-router-dom";
+
 import {
     chakra,
     HStack,
@@ -60,33 +63,54 @@ const NavBar = () => {
                 justifySelf="self-start"
                 onClick={mobileNav.onClose}
             />
-            <Button w="full" variant="ghost">
-                INICIO
-            </Button>
-            <Button
-                w="full"
-                variant="ghost"
-            >
-                DAMA
-            </Button>
-            <Button w="full" variant="ghost">
-                CABALLERO
-            </Button>
-            <Button w="full" variant="ghost">
-                BLOG
-            </Button>
-            <Button w="full" variant="ghost">
-                CONTACTO
-            </Button>
 
-            <Button colorScheme="pink" variant="solid" size="sm" bgGradient="linear(to-r, pink.400, pink.500, pink.600)"
-                color="white">
-                Iniciar sesión
-            </Button>
-            <Button size="sm" colorScheme="blue" variant="solid" bgGradient="linear(to-l, blue.300, blue.400, blue.500)"
-                color="white">
-                Unirse
-            </Button>
+            <Link as={ReactLink} to="/" href="#home" style={{ textDecoration: 'none' }}>
+                <Button w="full" variant="ghost">
+                    INICIO
+                </Button>
+            </Link>
+
+            <Link as={ReactLink} to="/ladies" href="#ladies" style={{ textDecoration: 'none' }}>
+                <Button
+                    w="full"
+                    variant="ghost"
+                >
+                    DAMA
+                </Button>
+            </Link>
+
+            <Link as={ReactLink} to="/gentlemen" href="#gentlemen" style={{ textDecoration: 'none' }}>
+                <Button w="full" variant="ghost">
+                    CABALLERO
+                </Button>
+            </Link>
+
+            <Link as={ReactLink} to="/blog" href="#blog" style={{ textDecoration: 'none' }}>
+                <Button w="full" variant="ghost">
+                    BLOG
+                </Button>
+            </Link>
+
+            <Link as={ReactLink} to="/contact" href="#contact" style={{ textDecoration: 'none' }}>
+                <Button w="full" variant="ghost">
+                    CONTACTO
+                </Button>
+            </Link>
+
+            <Link as={ReactLink} to="/login" href="#login" style={{ textDecoration: 'none' }}>
+                <Button colorScheme="pink" variant="solid" size="sm" bgGradient="linear(to-r, pink.400, pink.500, pink.600)"
+                    color="white">
+                    Iniciar sesión
+                </Button>
+            </Link>
+
+            <Link as={ReactLink} to="/register" href="#register" style={{ textDecoration: 'none' }}>
+                <Button size="sm" colorScheme="blue" variant="solid" bgGradient="linear(to-l, blue.300, blue.400, blue.500)"
+                    color="white">
+                    Unirse
+                </Button>
+            </Link>
+
         </VStack>
     );
 
@@ -112,7 +136,7 @@ const NavBar = () => {
                         justifyContent="space-between"
                     >
                         <Flex align="flex-start">
-                            <Link href="/">
+                            <Link as={ReactLink} to="/" href="#home">
                                 <HStack>
                                     <Box w="60px" h="58px">
                                         <Image src={J4Jeans} alt="Logo J4Jeans" />
@@ -123,40 +147,46 @@ const NavBar = () => {
 
                         <Flex>
                             <HStack spacing="5" display={{ base: "none", md: "flex" }}>
-                                <Button
-                                    bg={bg}
-                                    color="gray.500"
-                                    display="inline-flex"
-                                    alignItems="center"
-                                    fontSize="md"
-                                    _hover={{ color: cl }}
-                                    _focus={{ boxShadow: "none" }}
-                                    
-                                >
-                                    INICIO
-                                </Button>
-                                <Button
-                                    bg={bg}
-                                    color="gray.500"
-                                    display="inline-flex"
-                                    alignItems="center"
-                                    fontSize="md"
-                                    _hover={{ color: cl }}
-                                    _focus={{ boxShadow: "none" }}
-                                >
-                                    DAMA
-                                </Button>
-                                <Button
-                                    bg={bg}
-                                    color="gray.500"
-                                    display="inline-flex"
-                                    alignItems="center"
-                                    fontSize="md"
-                                    _hover={{ color: cl }}
-                                    _focus={{ boxShadow: "none" }}
-                                >
-                                    CABALLERO
-                                </Button>
+                                <Link as={ReactLink} to="/" href="#home" style={{ textDecoration: 'none' }}>
+                                    <Button
+                                        bg={bg}
+                                        color="gray.500"
+                                        display="inline-flex"
+                                        alignItems="center"
+                                        fontSize="md"
+                                        _hover={{ color: cl }}
+                                        _focus={{ boxShadow: "none" }}
+
+                                    >
+                                        INICIO
+                                    </Button>
+                                </Link>
+                                <Link as={ReactLink} to="/ladies" href="#ladies" style={{ textDecoration: 'none' }}>
+                                    <Button
+                                        bg={bg}
+                                        color="gray.500"
+                                        display="inline-flex"
+                                        alignItems="center"
+                                        fontSize="md"
+                                        _hover={{ color: cl }}
+                                        _focus={{ boxShadow: "none" }}
+                                    >
+                                        DAMA
+                                    </Button>
+                                </Link>
+                                <Link as={ReactLink} to="/gentlemen" href="#gentlemen" style={{ textDecoration: 'none' }}>
+                                    <Button
+                                        bg={bg}
+                                        color="gray.500"
+                                        display="inline-flex"
+                                        alignItems="center"
+                                        fontSize="md"
+                                        _hover={{ color: cl }}
+                                        _focus={{ boxShadow: "none" }}
+                                    >
+                                        CABALLERO
+                                    </Button>
+                                </Link>
                                 <Button
                                     bg={bg}
                                     color="gray.500"
@@ -168,46 +198,53 @@ const NavBar = () => {
                                 >
                                     PROMOCIÓN
                                 </Button>
-                                <Button
-                                    bg={bg}
-                                    color="gray.500"
-                                    display="inline-flex"
-                                    alignItems="center"
-                                    fontSize="md"
-                                    _hover={{ color: cl }}
-                                    _focus={{ boxShadow: "none" }}
-                                >
-                                    BLOG
-                                </Button>
-                                <Button
-                                    bg={bg}
-                                    color="gray.500"
-                                    display="inline-flex"
-                                    alignItems="center"
-                                    fontSize="md"
-                                    _hover={{ color: cl }}
-                                    _focus={{ boxShadow: "none" }}
-                                >
-                                    CONTACTO
-                                </Button>
+                                <Link as={ReactLink} to="/blog" href="#blog" style={{ textDecoration: 'none' }}>
+                                    <Button
+                                        bg={bg}
+                                        color="gray.500"
+                                        display="inline-flex"
+                                        alignItems="center"
+                                        fontSize="md"
+                                        _hover={{ color: cl }}
+                                        _focus={{ boxShadow: "none" }}
+                                    >
+                                        BLOG
+                                    </Button>
+                                </Link>
+                                <Link as={ReactLink} to="/contact" href="#contact" style={{ textDecoration: 'none' }}>
+                                    <Button
+                                        bg={bg}
+                                        color="gray.500"
+                                        display="inline-flex"
+                                        alignItems="center"
+                                        fontSize="md"
+                                        _hover={{ color: cl }}
+                                        _focus={{ boxShadow: "none" }}
+                                    >
+                                        CONTACTO
+                                    </Button>
+                                </Link>
                             </HStack>
                         </Flex>
                         <Flex justify="flex-end" align="center" color="gray.400">
                             <HStack spacing="5" display={{ base: "none", md: "flex" }}>
-                                
+
                                 {/* <Button>
                                 <IconButton onClick={Searching} aria-label="Search database" icon={<SearchIcon />} />
                                 </Button> */}
-                                
-                            
-                                <Button colorScheme="pink" variant="solid" size="sm" bgGradient="linear(to-r, pink.400, pink.500, pink.600)"
-                                    color="white">
-                                    Iniciar sesión
-                                </Button>
-                                <Button size="sm" colorScheme="blue" variant="solid" bgGradient="linear(to-l, blue.300, blue.400, blue.500)"
-                                    color="white">
-                                    Unirse
-                                </Button>
+
+                                <Link as={ReactLink} to="/login" href="#login" style={{ textDecoration: 'none' }}>
+                                    <Button colorScheme="pink" variant="solid" size="sm" bgGradient="linear(to-r, pink.400, pink.500, pink.600)"
+                                        color="white">
+                                        Iniciar sesión
+                                    </Button>
+                                </Link>
+                                <Link as={ReactLink} to="/register" href="#register" style={{ textDecoration: 'none' }}>
+                                    <Button size="sm" colorScheme="blue" variant="solid" bgGradient="linear(to-l, blue.300, blue.400, blue.500)"
+                                        color="white">
+                                        Unirse
+                                    </Button>
+                                </Link>
                             </HStack>
                             <IconButton
                                 size="md"

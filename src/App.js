@@ -11,29 +11,21 @@ import Caballero from './pages/Caballero';
 import { Switch } from '@chakra-ui/react';
 import { Route, Routes } from 'react-router';
 import ProductDetail from './pages/ProductDetail';
-import Footer2 from './components/footer';
-
-
-/* import { useContext } from 'react';
+import { useContext } from 'react';
 import AuthContext from './context/AuthContext';
+
 import AuthRoutes from './routers/AuthRoutes';
 import GuessRoutes from './routers/GuessRoutes';
- */
 
 function App() {
+
+  const { auth } = useContext(AuthContext);
 
   return (
     <div className="App">
       <NavBar />
 
-      {/* <Routes>
-        <Route exact path="/" component={Inicio} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/contact" component={Contacto} />
-        <Route exact path="/blog" component={Blog} />
-        <Route exact path="/404" component={NotFound404} />
-      </Routes> */}
+      {auth ? <AuthRoutes /> : <GuessRoutes />}
 
       {/* <Login /> */}
       {/* <Register /> */}
@@ -41,12 +33,11 @@ function App() {
       {/*  <Contacto /> */}
       {/* <Blog /> */}
       {/* <NotFound404 /> */}
-
       {/* <Caballero /> */}
       {/* <ProductDetail /> */}
 
       <Footer />
-     {/*  <Footer2 /> */}
+
     </div>
   );
 }
