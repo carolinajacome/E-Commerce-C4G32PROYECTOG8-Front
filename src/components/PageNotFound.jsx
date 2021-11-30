@@ -1,4 +1,5 @@
-import { Box, Heading, Text, Button } from '@chakra-ui/react';
+import { Box, Heading, Text, Button, Link } from '@chakra-ui/react';
+import { Link as ReactLink } from "react-router-dom";
 
 const NotFound404 = () => {
     return (
@@ -18,13 +19,15 @@ const NotFound404 = () => {
                 La página que estás buscando no parece existir
             </Text>
 
-            <Button
-                colorScheme="teal"
-                bgGradient="linear(to-r, teal.400, teal.500, teal.600)"
-                color="white"
-                variant="solid">
-                Ir al inicio
-            </Button>
+            <Link as={ReactLink} to="/" href="#home" style={{ textDecoration: 'none' }}>
+                <Button
+                    colorScheme="teal"
+                    bgGradient="linear(to-r, teal.400, teal.500, teal.600)"
+                    color="white"
+                    variant="solid">
+                    Ir al inicio
+                </Button>
+            </Link>
         </Box>
     );
 }
